@@ -1,189 +1,224 @@
 <!doctype html>
-<!-- <html lang="en"> -->
+<html lang="en">
 <head>
-  <!-- <meta charset="utf-8"> -->
+  <meta charset="utf-8">
   <title>Covid Purity Test</title>
  
   <style>
+    html {
+      background-color: #FBEEC8;
+      background-image: url("virus_tan.png");
+      background-repeat: repeat;
+    } 
+
     #temphead{
       text-align: center;
     }
     #introText {
+      margin-left: auto;
+      margin-right: auto;
       font-weight: normal;
       text-align: center;
-      font-style: italic;
+      width: 600px;
     }
 
+    .center{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      }
+    #select-all{
+      border-radius: 20px;
+      background-color: rgba(255, 119, 100, 0.3);
+      color: rgb(0,0,5);
+      position: relative;
+      left: 200px;
+      text-align: center;
+    }
+    #result{
+      text-align: center;
+      font-weight: bold;
+      font-size:25px; 
+    }
+    /* interested in font-weight, size, and color */
+    /* google "css font weight"*/
+    #totalScore {
+      text-align:center;
+      font-weight:bolder ;
+      color: red; /* font-size */
+      font-size:50px; 
+
+    }
   </style> <!-- CSS -->
+
+  <script type="text/javascript">
+    function count_sins(){
+      console.log("count_sins was called with", get_count());
+      document.getElementById("selected").innerHTML = get_count();
+    }
+
+    function get_count(){
+      return document.querySelectorAll('input[type="checkbox"]:checked').length;
+    }
+
+    function uncheck(){
+      var list = document.getElementsByName('kek');
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].type == 'checkbox')
+          list[i].checked = false;
+      }
+    }
+    
+    function hideListShowScore() {
+      var frontPageDiv = document.getElementById("toHide");
+      frontPageDiv.style.display = "none";
+      document.getElementById("totalScore").innerHTML = 100 - get_count();
+      var resultsDiv = document.getElementById("toShow");
+      resultsDiv.style.display = "block";
+      
+    }
+  </script>
  
 </head>
  
 <body>
-    <div id="toHide">
-      <h1 id="temphead">Coronavirus Purity Test</h1>
-      <p id="introText">
-        The Covid Purity Test has historically served as a segue from O-week to true college life at HOME.
-        It's a voluntary opportunity for O-week groups to bond, and for students to track the maturation
-        of their experiences throughout quarantine.
-        <br>
-        <b> Caution: This is not a bucket list.</b>
-      </p>
- 
-      <div id = "qList">
-        <ol>
-          <li><input type="checkbox" name=kek id="1">Do you have coronavirus?</li>
-          <li><input type="checkbox" name=kek id="2">Did you used to have coronavirus?</li>
-          <li><input type="checkbox" name=kek id="3">Do you get tested at least once every 2 weeks?</li>
-          <li><input type="checkbox" name=kek id="4">Is it 2020?</li>
-          <li><input type="checkbox" name=kek id="5">Have you been outside?</li>
-          <li><input type="checkbox" name=kek id="6">Do you not wear a mask outside?</li>
-          <li><input type="checkbox" name=kek id="7">Do you not wear a mask indoors?</li>
-          <li><input type="checkbox" name=kek id="8">Is your mask made out of cloth?</li>
-          <li><input type="checkbox" name=kek id="9">Is your mask made out of paper?</li>
-          <li><input type="checkbox" name=kek id="10">Does your mask have nose and mouth holes?</li>
-          <li><input type="checkbox" name=kek id="11">Does your mask have a hole for straws?</li>
-          <li><input type="checkbox" name=kek id="12">Do you not cover your nose with your mask?</li>
-          <li><input type="checkbox" name=kek id="13">Do you continually reuse the same mask?</li>
-          <li><input type="checkbox" name=kek id="14">Do you reuse your mask without washing it?</li>
-          <li><input type="checkbox" name=kek id="15">Do you live with somebody who goes out more than once a day?</li>
-          <li><input type="checkbox" name=kek id="16">Have you been to a gathering with more than 5 people?</li>
-          <li><input type="checkbox" name=kek id="17">Have you been to a gathering with more than 10 people?</li>
-          <li><input type="checkbox" name=kek id="18">Have you been to a gathering with more than 15 people?</li>
-          <li><input type="checkbox" name=kek id="19">Do you shower less than twice a day?</li>
-          <li><input type="checkbox" name=kek id="20">Do you currently reside in Orange County?</li>
-          <li><input type="checkbox" name=kek id="21">Do you currently reside in Riverside County?</li>
-          <li><input type="checkbox" name=kek id="22">Do you currently reside in Los Angeles County?</li>
-          <li><input type="checkbox" name=kek id="23">Do you currently reside in San Francisco County?</li>
-          <li><input type="checkbox" name=kek id="24">Any County with > 100,000 people?</li>
-          <li><input type="checkbox" name=kek id="25">Have you been to a beach in the past 6 months?</li>
-          <li><input type="checkbox" name=kek id="26">Have you been to Huntington Beach specifically?</li>
-          <li><input type="checkbox" name=kek id="27">Have you been to a park in the past 6 months?</li>
-          <li><input type="checkbox" name=kek id="28">Have you been to Golden Gate Park?</li>
-          <li><input type="checkbox" name=kek id="29">Have you been to Central Park?</li>
-          <li><input type="checkbox" name=kek id="30">Have you been to Bakersfield?</li>
-          <li><input type="checkbox" name=kek id="31">Have you been travelling?</li>
-          <li><input type="checkbox" name=kek id="32">Have you had a body temperature of over 98.7 degrees Fahrenheit?</li>
-          <li><input type="checkbox" name=kek id="33">Have you ever hoarded food from Costco?</li>
-          <li><input type="checkbox" name=kek id="34">Have you ever bought more than 5 rolls of toilet paper?</li>
-          <li><input type="checkbox" name=kek id="35">Have you sneezed?</li>
-          <li><input type="checkbox" name=kek id="36">Have you sneezed on someone else?</li>
-          <li><input type="checkbox" name=kek id="37">Do you wash your hands with cold water?</li>
-          <li><input type="checkbox" name=kek id="38">Do you wash your hands without soap?</li>
-          <li><input type="checkbox" name=kek id="39">Do you not wash your hands after using the restroom?</li>
-          <li><input type="checkbox" name=kek id="40">After touching your face?</li>
-          <li><input type="checkbox" name=kek id="41">After touching your mask?</li>
-          <li><input type="checkbox" name=kek id="42">After touching your pets?</li>
-          <li><input type="checkbox" name=kek id="43">Do you use hand sanitizer that has less than 60% alcohol content?</li>
-          <li><input type="checkbox" name=kek id="44">Do you have other underlying health conditions (heart disease, diabetes, asthma, etc)?</li>
-          <li><input type="checkbox" name=kek id="45">Have you been called racial slurs for being a POC?</li>
-          <li><input type="checkbox" name=kek id="46">Have you eaten outside at a restaurant?</li>
-          <li><input type="checkbox" name=kek id="47">Have you eaten inside at a restaurant?</li>
-          <li><input type="checkbox" name=kek id="48">Have you touched another person?</li>
-          <li><input type="checkbox" name=kek id="49">Has another person touched you?</li>
-          <li><input type="checkbox" name=kek id="50">Have you met up with a stranger using a dating app?</li>
-          <li><input type="checkbox" name=kek id="51">Have you attended or do you attend UCZ (University of California - Zoom)?</li>
-          <li><input type="checkbox" name=kek id="52">Do you touch your face often?</li>
-          <li><input type="checkbox" name=kek id="53">Have you touched your face today?</li>
-          <li><input type="checkbox" name=kek id="54">Have you been in an airplane in the past 6 months?</li>
-          <li><input type="checkbox" name=kek id="55">Do you post information online about social distancing yet choose to ignore your own advice?</li>
-          <li><input type="checkbox" name=kek id="56">Have you been closer than 6 feet away from others when going out?</li>
-          <li><input type="checkbox" name=kek id="57">Have you been to a hospital in the past 6 months?</li>
-          <li><input type="checkbox" name=kek id="58">Are you on a ventilator?</li>
-          <li><input type="checkbox" name=kek id="59">Have you died?</li>
-          <li><input type="checkbox" name=kek id="60">Do you use Ubereats?</li>
-          <li><input type="checkbox" name=kek id="61">Do you use Postmates?</li>
-          <li><input type="checkbox" name=kek id="62">Have you taken up a new hobby as a result of this quarantine?</li>
-          <li><input type="checkbox" name=kek id="63">Do you play League of Legends?</li>
-          <li><input type="checkbox" name=kek id="64">Maplestory?</li>
-          <li><input type="checkbox" name=kek id="65">Valorant?</li>
-          <li><input type="checkbox" name=kek id="66">Have you rewatched Avatar the Last Airbender?</li>
-          <li><input type="checkbox" name=kek id="67">All 3 Books?</li>
-          <li><input type="checkbox" name=kek id="68">By yourself?</li>
-          <li><input type="checkbox" name=kek id="69">?</li>
-          <li><input type="checkbox" name=kek id="70">Have you caught feelings for someone right when quarantine began and had to stop seeing them?</li>
-          <li><input type="checkbox" name=kek id="71">Have you streamed Folklore by Taylor Swift?</li>
-          <li><input type="checkbox" name=kek id="72">Did you download TikTok out of boredom?</li>
-          <li><input type="checkbox" name=kek id="73">Do you live in Florida?</li>
-          <li><input type="checkbox" name=kek id="74">Have you been to DisneyLand in the past month?</li>
-          <li><input type="checkbox" name=kek id="75">Do you sleep any time past 12 AM?</li>
-          <li><input type="checkbox" name=kek id="76">Do you sleep at dawn?</li>
-          <li><input type="checkbox" name=kek id="77">Have you watched the sun rise?</li>
-          <li><input type="checkbox" name=kek id="78">Have you woken up past 12 pm?</li>
-          <li><input type="checkbox" name=kek id="79">2 pm?</li>
-          <li><input type="checkbox" name=kek id="80">4 pm?</li>
-          <li><input type="checkbox" name=kek id="81">Have you shared food with a non-family member?</li>
-          <li><input type="checkbox" name=kek id="82">Have you contributed to Amazon’s recent rise in stocks?</li>
-          <li><input type="checkbox" name=kek id="83">Have you been binge watching anime since quarantine?</li>
-          <li><input type="checkbox" name=kek id="84">Have you watched Attack on Titan?</li>
-          <li><input type="checkbox" name=kek id="85">Re:Zero (season 2)?</li>
-          <li><input type="checkbox" name=kek id="86">Fire Force?</li>
-          <li><input type="checkbox" name=kek id="87">Tower of God?</li>
-          <li><input type="checkbox" name=kek id="88">God of Highschool?</li>
-          <li><input type="checkbox" name=kek id="89">Have you died?</li>
-          <li><input type="checkbox" name=kek id="90">Have you ingested alcohol since quarantine?</li>
-          <li><input type="checkbox" name=kek id="91">Have you done any hard drugs since quarantine?</li>
-          <li><input type="checkbox" name=kek id="92">Have you gained more than 5 lbs since quarantine?</li>
-          <li><input type="checkbox" name=kek id="93">Have you gone to the gym?</li>
-          <li><input type="checkbox" name=kek id="94">Have you played Animal Crossing: New Horizons for more than 12 hours?</li>
-          <li><input type="checkbox" name=kek id="95">Have you been laid off from a job?</li>
-          <li><input type="checkbox" name=kek id="96">Do you support the NBA bubble</li>
-          <li><input type="checkbox" name=kek id="97">Have you had a constant cough?</li>
-          <li><input type="checkbox" name=kek id="98">Have you been in contact with someone who tested positive for COVID?</li>
-          <li><input type="checkbox" name=kek id="99">Do you live with somebody who has COVID?</li>
-          <li><input type="checkbox" name=kek id="100">Are you physically or emotionally stressed?</li>
+  <div id="titleDiv">
+    <img src ="covid_purity_title.png" alt="The Official UCIDB Covid Purity Test" width="600" height="111" class="center">
+  </div>
+  <div id="toHide">
+    <!-- <h1 id="temphead">Coronavirus Purity Test</h1> -->
+      
+    <div id="introText">
 
-        </ol>
-        
-        <div id="result"><span id="selected"></span></div>
-        <script type="text/javascript">
-          function count_sins(){
-            console.log("count_sins was called with", get_count());
-            document.getElementById("selected").innerHTML = get_count();
-          }
+      <p><i>The Covid Purity Test has historically served as a segue from O-week to true college life at HOME.
+      It's a voluntary opportunity for O-week groups to bond, and for students to track the maturation
+      of their experiences throughout quarantine.</i></p>
+      <p><b> Caution: This is not a bucket list. Completion of all items on this test will likely result in death.</b></p>
+      <p>Click on every item you have done.</p>
+    </div>
 
-          function get_count(){
-            return document.querySelectorAll('input[type="checkbox"]:checked').length;
-          }
+    <div id = "qList">
+      <ol>
+        <li><input type="checkbox" name=kek id="1">Do you have coronavirus?</li>
+        <li><input type="checkbox" name=kek id="2">Did you used to have coronavirus?</li>
+        <li><input type="checkbox" name=kek id="3">Do you get tested at least once every 2 weeks?</li>
+        <li><input type="checkbox" name=kek id="4">Is it 2020?</li>
+        <li><input type="checkbox" name=kek id="5">Have you been outside?</li>
+        <li><input type="checkbox" name=kek id="6">Do you not wear a mask outside?</li>
+        <li><input type="checkbox" name=kek id="7">Do you not wear a mask indoors?</li>
+        <li><input type="checkbox" name=kek id="8">Is your mask made out of cloth?</li>
+        <li><input type="checkbox" name=kek id="9">Is your mask made out of paper?</li>
+        <li><input type="checkbox" name=kek id="10">Does your mask have nose and mouth holes?</li>
+        <li><input type="checkbox" name=kek id="11">Does your mask have a hole for straws?</li>
+        <li><input type="checkbox" name=kek id="12">Do you not cover your nose with your mask?</li>
+        <li><input type="checkbox" name=kek id="13">Do you continually reuse the same mask?</li>
+        <li><input type="checkbox" name=kek id="14">Do you reuse your mask without washing it?</li>
+        <li><input type="checkbox" name=kek id="15">Do you live with somebody who goes out more than once a day?</li>
+        <li><input type="checkbox" name=kek id="16">Have you been to a gathering with more than 5 people?</li>
+        <li><input type="checkbox" name=kek id="17">Have you been to a gathering with more than 10 people?</li>
+        <li><input type="checkbox" name=kek id="18">Have you been to a gathering with more than 15 people?</li>
+        <li><input type="checkbox" name=kek id="19">Do you shower less than twice a day?</li>
+        <li><input type="checkbox" name=kek id="20">Do you currently reside in Orange County?</li>
+        <li><input type="checkbox" name=kek id="21">Do you currently reside in Riverside County?</li>
+        <li><input type="checkbox" name=kek id="22">Do you currently reside in Los Angeles County?</li>
+        <li><input type="checkbox" name=kek id="23">Do you currently reside in San Francisco County?</li>
+        <li><input type="checkbox" name=kek id="24">Any County with > 100,000 people?</li>
+        <li><input type="checkbox" name=kek id="25">Have you been to a beach in the past 6 months?</li>
+        <li><input type="checkbox" name=kek id="26">Have you been to Huntington Beach specifically?</li>
+        <li><input type="checkbox" name=kek id="27">Have you been to a park in the past 6 months?</li>
+        <li><input type="checkbox" name=kek id="28">Have you been to Golden Gate Park?</li>
+        <li><input type="checkbox" name=kek id="29">Have you been to Central Park?</li>
+        <li><input type="checkbox" name=kek id="30">Have you been to Bakersfield?</li>
+        <li><input type="checkbox" name=kek id="31">Have you been travelling?</li>
+        <li><input type="checkbox" name=kek id="32">Have you had a body temperature of over 98.7 degrees Fahrenheit?</li>
+        <li><input type="checkbox" name=kek id="33">Have you ever hoarded food from Costco?</li>
+        <li><input type="checkbox" name=kek id="34">Have you ever bought more than 5 rolls of toilet paper?</li>
+        <li><input type="checkbox" name=kek id="35">Have you sneezed?</li>
+        <li><input type="checkbox" name=kek id="36">Have you sneezed on someone else?</li>
+        <li><input type="checkbox" name=kek id="37">Do you wash your hands with cold water?</li>
+        <li><input type="checkbox" name=kek id="38">Do you wash your hands without soap?</li>
+        <li><input type="checkbox" name=kek id="39">Do you not wash your hands after using the restroom?</li>
+        <li><input type="checkbox" name=kek id="40">After touching your face?</li>
+        <li><input type="checkbox" name=kek id="41">After touching your mask?</li>
+        <li><input type="checkbox" name=kek id="42">After touching your pets?</li>
+        <li><input type="checkbox" name=kek id="43">Do you use hand sanitizer that has less than 60% alcohol content?</li>
+        <li><input type="checkbox" name=kek id="44">Do you have other underlying health conditions (heart disease, diabetes, asthma, etc)?</li>
+        <li><input type="checkbox" name=kek id="45">Have you been called racial slurs for being a POC?</li>
+        <li><input type="checkbox" name=kek id="46">Have you eaten outside at a restaurant?</li>
+        <li><input type="checkbox" name=kek id="47">Have you eaten inside at a restaurant?</li>
+        <li><input type="checkbox" name=kek id="48">Have you touched another person?</li>
+        <li><input type="checkbox" name=kek id="49">Has another person touched you?</li>
+        <li><input type="checkbox" name=kek id="50">Have you met up with a stranger using a dating app?</li>
+        <li><input type="checkbox" name=kek id="51">Have you attended or do you attend UCZ (University of California - Zoom)?</li>
+        <li><input type="checkbox" name=kek id="52">Do you touch your face often?</li>
+        <li><input type="checkbox" name=kek id="53">Have you touched your face today?</li>
+        <li><input type="checkbox" name=kek id="54">Have you been in an airplane in the past 6 months?</li>
+        <li><input type="checkbox" name=kek id="55">Do you post information online about social distancing yet choose to ignore your own advice?</li>
+        <li><input type="checkbox" name=kek id="56">Have you been closer than 6 feet away from others when going out?</li>
+        <li><input type="checkbox" name=kek id="57">Have you been to a hospital in the past 6 months?</li>
+        <li><input type="checkbox" name=kek id="58">Are you on a ventilator?</li>
+        <li><input type="checkbox" name=kek id="59">Have you died?</li>
+        <li><input type="checkbox" name=kek id="60">Do you use Ubereats?</li>
+        <li><input type="checkbox" name=kek id="61">Do you use Postmates?</li>
+        <li><input type="checkbox" name=kek id="62">Have you taken up a new hobby as a result of this quarantine?</li>
+        <li><input type="checkbox" name=kek id="63">Do you play League of Legends?</li>
+        <li><input type="checkbox" name=kek id="64">Maplestory?</li>
+        <li><input type="checkbox" name=kek id="65">Valorant?</li>
+        <li><input type="checkbox" name=kek id="66">Have you rewatched Avatar the Last Airbender?</li>
+        <li><input type="checkbox" name=kek id="67">All 3 Books?</li>
+        <li><input type="checkbox" name=kek id="68">By yourself?</li>
+        <li><input type="checkbox" name=kek id="69">?</li>
+        <li><input type="checkbox" name=kek id="70">Have you caught feelings for someone right when quarantine began and had to stop seeing them?</li>
+        <li><input type="checkbox" name=kek id="71">Have you streamed Folklore by Taylor Swift?</li>
+        <li><input type="checkbox" name=kek id="72">Did you download TikTok out of boredom?</li>
+        <li><input type="checkbox" name=kek id="73">Do you live in Florida?</li>
+        <li><input type="checkbox" name=kek id="74">Have you been to DisneyLand in the past month?</li>
+        <li><input type="checkbox" name=kek id="75">Do you sleep any time past 12 AM?</li>
+        <li><input type="checkbox" name=kek id="76">Do you sleep at dawn?</li>
+        <li><input type="checkbox" name=kek id="77">Have you watched the sun rise?</li>
+        <li><input type="checkbox" name=kek id="78">Have you woken up past 12 pm?</li>
+        <li><input type="checkbox" name=kek id="79">2 pm?</li>
+        <li><input type="checkbox" name=kek id="80">4 pm?</li>
+        <li><input type="checkbox" name=kek id="81">Have you shared food with a non-family member?</li>
+        <li><input type="checkbox" name=kek id="82">Have you contributed to Amazon’s recent rise in stocks?</li>
+        <li><input type="checkbox" name=kek id="83">Have you been binge watching anime since quarantine?</li>
+        <li><input type="checkbox" name=kek id="84">Have you watched Attack on Titan?</li>
+        <li><input type="checkbox" name=kek id="85">Re:Zero (season 2)?</li>
+        <li><input type="checkbox" name=kek id="86">Fire Force?</li>
+        <li><input type="checkbox" name=kek id="87">Tower of God?</li>
+        <li><input type="checkbox" name=kek id="88">God of Highschool?</li>
+        <li><input type="checkbox" name=kek id="89">Have you died?</li>
+        <li><input type="checkbox" name=kek id="90">Have you ingested alcohol since quarantine?</li>
+        <li><input type="checkbox" name=kek id="91">Have you done any hard drugs since quarantine?</li>
+        <li><input type="checkbox" name=kek id="92">Have you gained more than 5 lbs since quarantine?</li>
+        <li><input type="checkbox" name=kek id="93">Have you gone to the gym?</li>
+        <li><input type="checkbox" name=kek id="94">Have you played Animal Crossing: New Horizons for more than 12 hours?</li>
+        <li><input type="checkbox" name=kek id="95">Have you been laid off from a job?</li>
+        <li><input type="checkbox" name=kek id="96">Do you support the NBA bubble</li>
+        <li><input type="checkbox" name=kek id="97">Have you had a constant cough?</li>
+        <li><input type="checkbox" name=kek id="98">Have you been in contact with someone who tested positive for COVID?</li>
+        <li><input type="checkbox" name=kek id="99">Do you live with somebody who has COVID?</li>
+        <li><input type="checkbox" name=kek id="100">Are you physically or emotionally stressed?</li>
 
-          function uncheck(){
-            var list = document.getElementsByName('kek');
-            for (var i = 0; i < list.length; i++) {
-              if (list[i].type == 'checkbox')
-                list[i].checked = false;
-            }
-          }
-          
-          function hideListShowScore() {
-            var frontPageDiv = document.getElementById("toHide");
-            frontPageDiv.style.display = "none";
-            document.getElementById("totalScore").innerHTML = get_count();
-            var resultsDiv = document.getElementById("toShow");
-            resultsDiv.style.display = "block";
-            
-          }
-        </script>
+      </ol>
+      
+      <div id="result"><span id="selected"></span></div>
 
-        <button type="button" onclick="count_sins(); hideListShowScore();">Calculate sins</button>
-        <button type="button" id="select-all" onclick="uncheck()" >Refresh sins</button>
-      </div>
+
+      <button type="button" id="select-all" onclick="count_sins(); hideListShowScore();">Calculate sins</button>
+      <button type="button" id="select-all" onclick="uncheck()" >Refresh sins</button>
+    </div>
      
-    </div>
+  </div>
  
-    <div id="toShow">
-      <script>
-        var resultsDiv = document.getElementById("toShow");
-        resultsDiv.style.display = "none";
-      </script>
-      <div id="result">Your Score: <span id="totalScore"></span></div>
-    </div>
-   
- 
-   
-  <script>
- 
-  </script> <!-- Javascript -->
-</body>
- 
- 
+  <div id="toShow">
+    <script>
+      var resultsDiv = document.getElementById("toShow");
+      resultsDiv.style.display = "none";
+    </script>
+    <br>
+    <div id="result"><br>Your Score: <br><br><span id="totalScore"></span></div>
+  </div>
  
 </html><!doctype html>
