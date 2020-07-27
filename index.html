@@ -14,6 +14,7 @@
     #temphead{
       text-align: center;
     }
+    
     #introText {
       margin-left: auto;
       margin-right: auto;
@@ -27,7 +28,8 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      }
+    }
+    
     #select-all{
       border-radius: 20px;
       background-color: rgba(255, 119, 100, 0.3);
@@ -36,18 +38,18 @@
       left: 200px;
       text-align: center;
     }
+
     #result{
       text-align: center;
       font-weight: bold;
-      font-size:25px; 
+      font-size: 25px;
     }
-    /* interested in font-weight, size, and color */
-    /* google "css font weight"*/
+    
     #totalScore {
-      text-align:center;
-      font-weight:bolder ;
-      color: red; /* font-size */
-      font-size:50px; 
+      text-align: center;
+      font-weight: bolder;
+      color: red;
+      font-size: 50px; 
 
     }
   </style> <!-- CSS -->
@@ -86,9 +88,8 @@
   <div id="titleDiv">
     <img src ="covid_purity_title.png" alt="The Official UCIDB Covid Purity Test" width="600" height="111" class="center">
   </div>
-  <div id="toHide">
-    <!-- <h1 id="temphead">Coronavirus Purity Test</h1> -->
-      
+
+  <div id="toHide">    
     <div id="introText">
 
       <p><i>The Covid Purity Test has historically served as a segue from O-week to true college life at HOME.
@@ -204,8 +205,6 @@
       </ol>
       
       <div id="result"><span id="selected"></span></div>
-
-
       <button type="button" id="select-all" onclick="count_sins(); hideListShowScore();">Calculate sins</button>
       <button type="button" id="select-all" onclick="uncheck()" >Refresh sins</button>
     </div>
